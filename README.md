@@ -5,7 +5,7 @@ with read_public permission. Only public boards!!!
 Application create directory "~/pinterest" and backup your boards with pins.
 Next attempt write our pins if they been update
 
-#install
+#install:
 ```
 python setup.py install
 ```
