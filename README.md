@@ -3,12 +3,12 @@ Application require ability to get enviroment variable PINTEREST_TOKEN with toke
 who should be making through https://developers.pinterest.com/tools/access_token/ 
 with read_public permission. Only public boards!!!
 Application create directory "~/pinterest" and backup your boards with pins.
-Next attempt write our pins if they been update Simple install and using:
+Next attempt write our pins if they been update Simple install:
 
 ```
 python setup.py install
 ```
-
+And using:
 ```bash
 export PINTEREST_TOKEN="AAABBBBaaaaa..."
 pbackup
