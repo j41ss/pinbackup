@@ -6,7 +6,7 @@ setup(name='pinbackup',
       author='Peter G.',
       author_email='guileone@ukr.net',
       license='BSD License',
-      install_requires= [ 'pycurl', 'colorama' ],
+      install_requires= [ 'pycurl', 'colorama', ],
       entry_points= {
             'console_scripts':
               ['pbackup = pinbackup.paccess:main' ]
