@@ -9,6 +9,8 @@ import colorama
 import hashlib
 import threading
 import sys
+import random
+import string
 
 class PAccess:
     apihost = 'https://api.pinterest.com/v1/'
