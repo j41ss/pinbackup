@@ -125,6 +125,7 @@ class PBackup:
 
  def board_backup( self, *args, **kwargs ):
   name = args[0]
+  rand_len = 10
   pins_all_from_boards = \
       self._apiobj.board(self.userid+'/'+ name +'/pins')
   pin_ids = [ i['id'] for i in
@@ -139,13 +140,15 @@ class PBackup:
      urls[answ['id']] = answ['image']['original']['url']
 
     if urls:
+     rand_str =  lambda x: "".join (
+        [ random.SystemRandom().choice( string.ascii_lowercase + string.digits )  for x in range(x) ] )
      for i, j in urls.items():
       cont = self._apiobj.wget_pic(j)
       hash = hashlib.sha256( cont.getvalue() ).hexdigest()
       if not os.path.isdir( self.lpath + os.sep + args[1] ):
        os.makedirs( self.lpath + os.sep + args[1] )
       if hash not in self._hashes :
-       with open(self.lpath + os.sep + os.sep + args[1] + i + '.jpg' , 'w' ) as w:
+       with open(self.lpath + os.sep + args[1] + os.sep + i + rand_str(rand_len) + '.jpg' , 'w' ) as w:
          print('Save object {} from {}'.format(self.warn(i), self.info(args[1])))
          w.write( cont.getvalue() )
 
